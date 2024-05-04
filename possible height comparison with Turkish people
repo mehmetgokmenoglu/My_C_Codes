@@ -1,0 +1,48 @@
+//Possible height comparison with Turkish people
+
+#include <stdio.h>
+
+int main() {
+int kidgender;
+float dadheight;
+float momheight;
+float possibleheight;
+
+printf("Enter the kid gender(for male 1 / for female 2)");
+scanf("%d",&kidgender);
+printf("Enter the dad height(cm)");
+scanf("%f",&dadheight);
+printf("Enter the mom height(cm)");
+scanf("%f",&momheight);
+printf("---------------------\n");
+
+if (kidgender == 1){
+possibleheight = (dadheight + momheight + 13) / 2;
+printf("Possible height = %2f \n",possibleheight);
+    if (possibleheight< 175.5){
+        printf("Your height is under the average height of Turkish men");
+    }
+    else if (possibleheight == 175.5){
+        printf("Your height is equal to Turkish men height average");
+    }
+    else if (possibleheight> 175.5){
+        printf("Your height is above the average height of Turkish men");
+    }
+}
+
+else if (kidgender == 2){
+possibleheight = (dadheight + momheight - 13 ) / 2;
+printf("Possible height = %2f \n",possibleheight);
+    if (possibleheight<163.5){
+        printf("Your height is under the average height of Turkish women");
+    }
+    else if (possibleheight == 163.5){
+        printf("Your height is equal to Turkish women height average");
+    }
+    else if (possibleheight>163.5){
+        printf("Your height is above the average height of Turkish women");
+    }
+}
+
+return 0;
+}
