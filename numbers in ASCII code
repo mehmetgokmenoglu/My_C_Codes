@@ -1,0 +1,27 @@
+//Characters corresponding to numbers in ASCII code
+
+#include <stdio.h>
+int main(){
+    int i;
+    for(i=65;i<=84;i++){
+        if(i==65)
+            printf("ASCII CODE\n");
+        printf("%d ",i);
+    }
+    for(i=65;i<=84;i++){
+        if(i==65)
+            printf("\nUPPERCASE LETTER\n");
+        printf("%c ",i);
+    }
+    for(i=97;i<=116;i++){
+        if(i==97)
+            printf("\nASCII CODE\n");
+        printf("%d ",i);
+    }
+    for(i=97;i<=116;i++){
+        if(i==97)
+            printf("\nLOWERCASE LETTER\n");
+        printf("%c ",i);
+    }
+    return 0;
+}
