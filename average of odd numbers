@@ -1,0 +1,27 @@
+//average of odd numbers
+#include <stdio.h>
+
+int main() {
+    int number, sum = 0, count = 0;
+
+    printf("Please enter 10 positive integers:\n");
+
+    for (int i = 0; i < 10; ++i) {
+        scanf("%d", &number);
+
+        if (number % 2 != 0) {
+            sum += number;
+            count++;
+        }
+    }
+
+    if (count > 0) {
+        float average = (float)sum / count;
+        printf("Average of odd numbers: %.2f\n", average);
+    }
+    else {
+        printf("No odd numbers were found among the entered values.\n");
+    }
+
+    return 0;
+}
