@@ -1,0 +1,36 @@
+/*The midpoint is the point exactly in the middle between two points.
+The x coordinate value of the midpoint is the arithmetically calculated 
+x values ​​of two points; The y coordinate value of the midpoint is where 
+the y values ​​of the two points are calculated arithmetically.*/
+
+#include <stdio.h>
+
+int main() {
+
+    printf("Enter x1 and y1 for the first dot:\n");
+    float x1;
+    float y1;
+    scanf("%f %f",&x1,&y1);
+    printf("Enter x2 and y2 for the second dot:\n");
+    float x2;
+    float y2;
+    scanf("%f %f",&x2,&y2);
+    float x1_x2;
+    float y1_y2;
+    float xo;
+    float yo;
+    x1_x2 = x1+x2;
+    y1_y2 = y1+y2;
+    xo = x1_x2/2;
+    yo = y1_y2/2;
+    printf("-------------------------------------------\n");
+    printf("    %.2f+%.2f    %.2f\n",x1,x2,x1_x2);
+    printf("xo= --------- = ------ =  %.3f\n",xo);
+    printf("        2         2\n");
+    printf("                                            \n");
+    printf("    %.2f+%.2f    %.2f\n",y1,y2,y1_y2);
+    printf("xo= --------- = ------ =  %.3f\n",yo);
+    printf("        2          2\n");
+
+    return 0;
+}
