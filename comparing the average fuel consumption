@@ -1,0 +1,34 @@
+//Code is comparing the average fuel consumption of 3 vehicles.
+
+#include <stdio.h>
+
+int main() {
+
+    float car1city,car2city,car3city,car1country,car2country,car3country;
+    float avg1,avg2,avg3;
+
+    printf("Enter the consumption amount for first car(city/country):");
+    scanf("%f %f",&car1city,&car1country);
+    printf("Enter the consumption amount for second car(city/country):");
+    scanf("%f %f",&car2city,&car2country);
+    printf("Enter the consumption amount for third car(city/country):");
+    scanf("%f %f",&car3city,&car3country);
+
+    avg1 = car1city*11/20 + car1country*9/20;
+    avg2 = car2city*11/20 + car2country*9/20;
+    avg3 = car3city*11/20 + car3country*9/20;
+
+    if (avg1 < avg2 && avg1 < avg3) {
+        printf("First car has least average consumption value\n");
+        printf("%f litres",avg1);
+    }
+    else if (avg2 < avg1 && avg2 < avg3) {
+        printf("Second car has least average consumption value\n");
+        printf("%f litres",avg2);
+    }
+    else if (avg3 < avg1 && avg3 < avg2) {
+        printf("Third car has least average consumption value\n");
+        printf("%f litres",avg3);
+    }
+    return 0;
+}
