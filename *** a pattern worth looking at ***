@@ -1,0 +1,21 @@
+/*
+A program that creates a pattern by increasing the increment 
+amount one by one according to the LIA value selected by the user.
+*/
+
+#include <stdio.h>
+
+int main() {
+
+    int i=0,j,LIA;
+
+    printf("What should be the last increase amount?");
+    scanf("%d",&LIA);
+
+    for(j=i+1;j<=(i+1)*(LIA+1)/2;j=j+i){
+        printf(" %d",j);
+        i++;
+    }
+
+    return 0;
+}
