@@ -1,0 +1,24 @@
+//The sum of the areas of the squares whose side length is halved each time
+
+#include <stdio.h>
+
+int main() {
+
+    float i,N,a,area = 0;
+    //how many squares will be calculated = N
+    //one side of the first square = a
+
+    printf("Enter the value of N");
+    scanf("%f",&N);
+    printf("Enter the value of a");
+    scanf("%f",&a);
+
+    for(i=0;i<N;i++){
+        area += a*a;
+        a = a/2;
+    }
+
+    printf("Total area: %f",area);
+
+    return 0;
+}
