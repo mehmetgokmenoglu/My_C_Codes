@@ -1,0 +1,23 @@
+//Program that prints prime numbers up to the number entered by the user
+
+#include <stdio.h>
+
+int main() {
+
+    int upTo;
+    printf("Up to which number would you like to see prime numbers?");
+    scanf("%d",&upTo);
+
+    for(int i=2;i<=upTo;i++){
+        int isPrime = 1;
+        for(int j=2;j<=i/2;j++){
+            if(i%j==0){
+                isPrime = 0;
+                break;
+            }
+        }
+        if (isPrime)
+            printf("%d ",i);
+    }
+    return 0;
+}
