@@ -1,0 +1,19 @@
+//program that finds whether the numbers entered by the user are positive or negative
+
+#include <stdio.h>
+int main() {
+    int count,numbers,i,negative=0,positive=0;
+    printf("How many numbers will you enter ?");
+    scanf("%d",&count);
+    for(i=0;i<count;i++){
+        if(i==0)
+            printf("Numbers (%d numbers):",count);
+        scanf("%d",&numbers);
+        if(numbers<0)
+            negative+=1;
+        else if(numbers>0)
+            positive+=1;
+    }
+    printf("Of the %d numbers entered, %d are negative and %d are positive",count,negative,positive);
+    return 0;
+}
