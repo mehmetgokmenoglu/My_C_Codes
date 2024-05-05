@@ -1,0 +1,25 @@
+//program that draw triangles with stars
+
+#include <stdio.h>
+
+int main() {
+    int sideLength;
+    
+    printf("Enter the side length (between 1 and 20):");
+    scanf("%d", &sideLength);
+
+    if (sideLength < 1 || sideLength > 20) {
+        printf("Invalid side length! Exiting the program.\n");
+        return 1;
+    }
+    for (int i = sideLength; i > 0; i--) {
+        for (int space = 0; space < sideLength - i; space++) {
+            printf(" ");
+        }
+        for (int j = 0; j < i; j++) {
+            printf("* ");
+        }
+        printf("\n");
+    }
+    return 0;
+}
