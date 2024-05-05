@@ -1,0 +1,39 @@
+//Program that finds the total cost according to product codes
+
+#include <stdio.h>
+
+int main() {
+    int code;
+    float salesRevenue = 0;
+
+    printf("Enter the product codes of the items (Enter value of 111 to Stop):");
+
+    while(1){
+        scanf("%d",&code);
+
+        if(code == 111){
+            break;
+        }
+        else if(code == 11){
+            salesRevenue += 1.5;
+        }
+        else if(code == 12){
+            salesRevenue += 2.5;
+        }
+        else if(code == 13){
+            salesRevenue += 3;
+        }
+        else if(code == 14){
+            salesRevenue += 4.5;
+        }
+        else if(code == 15){
+            salesRevenue += 5;
+        }
+        else{
+            printf("Invalid product code. Exiting.\n");
+            return 1;
+        }
+    }
+    printf("Total Sales Revenue : %.2f",salesRevenue);
+    return 0;
+}
