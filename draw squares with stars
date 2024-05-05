@@ -1,0 +1,24 @@
+//Program that draw squares with stars
+
+#include <stdio.h>
+
+int main() {
+    int sideLength;
+
+    printf("Enter the side length (between 1 and 20):");
+    scanf("%d", &sideLength);
+
+    if (sideLength < 1 || sideLength > 20) {
+        printf("Invalid side length! Exiting the program.\n");
+        return 1;
+    }
+
+    for (int i = 0; i < sideLength; i++) {
+        for (int j = 0; j < sideLength; j++) {
+            printf("*  ");
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
