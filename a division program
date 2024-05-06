@@ -1,5 +1,5 @@
-//Program to find numbers divisible by any two numbers in a given range
-//This example find integers divisible by 4 and 7
+//Program that prints numbers divided by the selected number a and b in the range specified by the user
+//Example a=4 b=7 least common multiple = 28
 
 #include <stdio.h>
 int main() {
