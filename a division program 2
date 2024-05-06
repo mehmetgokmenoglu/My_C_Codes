@@ -1,0 +1,31 @@
+//Program that prints numbers divided by the selected number a or b in the range specified by the user
+//Example a=3 b=11
+
+#include <stdio.h>
+int main() {
+
+    int startingValue,endingValue,count = 0;
+
+    printf("Enter the starting value");
+    scanf("%d",&startingValue);
+
+    printf("Enter the ending value");
+    scanf("%d",&endingValue);
+
+    if(endingValue<=startingValue){
+        printf("Mistake!!!\n"
+               "The ending value cannot be less than or equal to the starting value");
+        return 1;
+    }
+
+    while(startingValue<=endingValue){
+        if(startingValue%3==0 || startingValue%11==0){
+            count++;
+            printf("%d, ",startingValue);
+        }
+        startingValue++;
+    }
+    printf("\n%d numbers are follow the rule",count);
+
+    return 0;
+}
