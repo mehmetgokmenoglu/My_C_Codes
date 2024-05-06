@@ -1,0 +1,17 @@
+//program that prints stars under each other according to five numbers entered by user
+
+#include <stdio.h>
+
+int main() {
+    int numbers;
+    printf("Enter five numbers");
+
+    for(int i=0;i<5;i++){
+        scanf("%d",&numbers);
+        for(;numbers>0;numbers--){
+            printf("*");
+        }
+        printf("\n");
+    }
+    return 0;
+}
