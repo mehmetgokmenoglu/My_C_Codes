@@ -1,0 +1,18 @@
+//When the digits of which four-digit number are written in n to the power of n format, their sum is equal to itself?
+//example: (abcd = a^a + b^b + c^c + d^d) we want the program to find this abcd number
+
+#include <stdio.h>
+#include <math.h>
+int a,b,c,d;
+int main() {
+    for(int i=1000;i<10000;i++){
+        a=i/1000;
+        b=i/100%10;
+        c=i/10%10;
+        d=i%10;
+        if(pow(a,a)+pow(b,b)+pow(c,c)+pow(d,d)==i){
+            printf("%d",i);
+        }
+    }
+    return 0;
+}
