@@ -1,0 +1,41 @@
+//program that calculate total ticket fares according to the ages of members of a family
+
+#include <stdio.h>
+
+int main() {
+
+    int members;
+    int ages;
+    float fee = 0;
+
+printf("How many members are in the family?");
+scanf("%d",&members);
+printf("Enter the ages of %d people:",members);
+
+for(int i=1;i<=members;i++) {
+    scanf("%d", &ages);
+    if(ages<1||ages>100){
+        printf("Invalid age entered\n");
+        break;
+    }
+    else if(1<=ages && ages<=10){
+        fee += 1;
+    }
+    else if(11<=ages && ages<=17){
+        fee += 1.5;
+    }
+    else if(18<=ages && ages<=26){
+        fee += 4.75;
+    }
+    else if(27<=ages && ages<=50){
+        fee += 7;
+    }
+    else if(51<=ages && ages<=99){
+        fee += 5.25;
+    }
+    if(i==members){
+        printf("Total fee to be paid: %f",fee);
+    }
+}
+    return 0;
+}
