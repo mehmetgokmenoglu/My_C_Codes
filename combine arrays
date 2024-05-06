@@ -1,0 +1,29 @@
+//Program to combine arrays a and b into array c
+
+#include <stdio.h>
+
+int main() {
+    int a[5], b[5], c[10];
+
+    printf("Enter the elements of array A:\n");
+    for (int i = 0; i < 5; i++) {
+        scanf("%d", &a[i]);
+    }
+
+    printf("Enter the elements of array B:\n");
+    for (int i = 0; i < 5; i++) {
+        scanf("%d", &b[i]);
+    }
+
+    for (int i = 0; i < 5; i++) {
+        c[i] = a[i];
+        c[i + 5] = b[i];
+    }
+
+    printf("Merged array C:\n");
+    for (int i = 0; i < 10; i++) {
+        printf("%d ", c[i]);
+    }
+
+    return 0;
+}
