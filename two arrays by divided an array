@@ -1,0 +1,33 @@
+//program that creates two arrays by dividing an array into two
+//example array C[10] = {1,2,3,3,4,4,5,5,6,7,8,10} is divided into two and A[5] = {1,3,5,7,9}, B[5] = {2,4,6,8,10} is created
+
+#include <stdio.h>
+int main() {
+
+    int a[5],b[5],c[10];
+
+printf("Enter the elements of array C:");
+
+for(int i=0;i<10;i++){
+    scanf("%d", &c[i]);
+}
+
+for(int i=0;i<5;i++){
+        a[i] = c[2*i];
+        b[i] = c[2*i+1];
+    }
+
+    printf("Array A is: ");
+
+    for(int i=0;i<5;i++){
+        printf("%d ",a[i]);
+    }
+
+    printf("\nArray B is: ");
+
+    for(int i=0;i<5;i++){
+        printf("%d ",b[i]);
+    }
+
+return 0;
+}
