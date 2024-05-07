@@ -1,0 +1,40 @@
+/*
+a programme that finds the average of the elements in an array 
+and prints the elements above and below the average
+*/
+
+#include<stdio.h>
+
+int main()
+{
+    float A[5],sum=0;
+    
+    printf("Enter the array A");
+    
+    for(int i=0;i<5;i++){
+        scanf("%f",&A[i]);
+        sum += A[i];
+    }
+    
+    float average = (float)sum / 5;
+    
+    printf("Values average is %f\n",average);
+    
+    printf("Values are lower than average:\n");
+    
+    for(int i=0;i<5;i++) {
+        if (A[i] < average) {
+            printf("%.2f ", A[i]);
+        }
+    }
+    
+    printf("\nValues are upper than average:\n");
+    
+    for(int i=0;i<5;i++){
+        if(A[i]>average){
+            printf("%.2f ",A[i]);
+        }
+    }
+        
+    return 0;
+}
