@@ -1,0 +1,44 @@
+/*
+A programme developed for an enterprise to follow the sales of its vendors, 
+the ID and sales quantity of the vendors are entered and how much additional 
+sales other vendors should make is calculated based on the vendor who makes 
+the most sales.
+*/
+
+#include<stdio.h>
+#define MAX_PERSONNEL 50
+#define MAX_DATA 2
+int main() {
+    int personnelCount;
+    int dataArray[MAX_PERSONNEL][MAX_DATA];
+    int highestIndex;
+    int additionalSales;
+
+    printf("Enter the number of personnel (up to 50):");
+    scanf("%d", &personnelCount);
+
+    if (personnelCount > MAX_PERSONNEL || personnelCount <= 0) {
+        printf("Invalid number of personnel. Exiting the program.\n");
+        return 1;
+    }
+    for(int i=0;i<personnelCount;i++){
+        printf("Personnel %d - ID:",i+1);
+        scanf("%d",&dataArray[i][0]);
+        printf("Personnel %d - Sales Quantity:",i+1);
+        scanf("%d",&dataArray[i][1]);
+    }
+
+    highestIndex = dataArray[0][1];
+    for(int i = 1;i < personnelCount;i++){
+        if(dataArray[i][1] >= highestIndex){
+            highestIndex = dataArray[i][1];
+        }
+    }
+    printf("\nPersonnel\tID\t\tAdditional Sales\n");
+    for(int i = 0;i < personnelCount;i++){
+        additionalSales = highestIndex - dataArray[i][1];
+        printf("%d\t\t%d\t\t%d\n",i+1,dataArray[i][0],additionalSales);
+    }
+
+    return 0;
+}
