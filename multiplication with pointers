@@ -1,0 +1,32 @@
+//multiplication with pointers
+
+#include<stdio.h>
+int paperwork(int* n, int* m)
+{
+    printf("Enter the n:");
+    scanf("%d",n);
+
+    printf("Enter the m:");
+    scanf("%d",m);
+
+    int count1 = 0;
+    int count2 = 0;
+
+    for(*n=*n;*n>0;(*n)--){
+        count1++;
+        for(*m=*m;*m>0;(*m)--) {
+            count2++;
+        }
+    }
+    return count1*count2;
+}
+int main(){
+
+    int n;
+    int m;
+    int result = paperwork(&n,&m);
+
+    printf("Result: %d",result);
+
+    return 0;
+}
