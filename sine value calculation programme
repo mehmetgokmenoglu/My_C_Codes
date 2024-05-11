@@ -1,0 +1,14 @@
+//sine value calculation programme
+
+#include <stdio.h>
+#include <math.h>
+int main(){
+    double derece;
+    double sin_x;
+    printf("Enter the value of x");
+    scanf("%lf",&derece);
+    double radyan = derece * M_PI / 180.0;
+    sin_x = sin(radyan);
+    printf("sin(%lf) = %lf\n", radyan, sin_x);
+    return 0;
+}
