@@ -1,0 +1,44 @@
+//A programme that finds the location of the desired element in a 3x3 array
+
+#include <stdio.h>
+
+void search(int array[3][3], int search_value){
+    int found = 0;
+
+    for(int i=0;i<3;i++){
+        for(int j=0;j<3;j++){
+            if(array[i][j]==search_value){
+                printf("Value found at array[%d][%d]\n", i, j);
+                found = 1;
+                break;
+            }
+        }
+        if (found==1)
+            break;
+    }
+    if(!found)
+        printf("Value not found\n");
+}
+
+
+int main() {
+
+    int array[3][3];
+    int search_value;
+
+    printf("Enter the elements of the 3x3 array:\n");
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            scanf("%d", &array[i][j]);
+        }
+    }
+    
+    while(1){
+        
+    printf("Enter the value you want to search");
+    scanf("%d",&search_value);
+
+    search(array,search_value);
+    
+    }
+}
