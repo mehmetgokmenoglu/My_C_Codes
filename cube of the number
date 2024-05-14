@@ -1,0 +1,23 @@
+//programme that takes the cube of the entered number
+
+#include <stdio.h>
+#include <math.h>
+
+int cubeOfNumber(int* number){
+    *number = pow(*number,3);
+    return *number;
+}
+
+int main() {
+
+    int number;
+
+    printf("Enter the number");
+    scanf("%d",&number);
+
+    cubeOfNumber(&number);
+
+    printf("%d",number);
+
+    return 0;
+}
