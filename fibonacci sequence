@@ -1,0 +1,20 @@
+ //programme to print fibonacci sequence
+
+#include <stdio.h>
+
+int main(){
+
+    int fibodizi[10];
+
+    fibodizi[0]=0;
+    fibodizi[1]=1;
+
+    for(int i=2;i<10;i++){
+        fibodizi[i]=fibodizi[i-2]+fibodizi[i-1];
+    }
+
+    for(int i=1;i<10;i++)
+        printf("%d\t",fibodizi[i]);
+
+    return 0;
+}
