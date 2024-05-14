@@ -6,7 +6,7 @@ int fibonacci(int n);
 
 int main(){
     int n;
-    printf("Kaca kadar?:");
+    printf("up to how much?:");
     scanf("%d",&n);
     for(int i=0;i<n;i++){
         printf("%d ",fibonacci(i));
