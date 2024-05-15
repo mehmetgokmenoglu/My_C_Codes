@@ -1,0 +1,80 @@
+/*
+a programme that prints the atomic numbers, symbols and atomic weights
+of the first 10 elements in the periodic table with the linkedlist method
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+typedef struct node {
+    int no;
+    char symbol[3];
+    double atomic_weight;
+    struct node* next;
+} node;
+
+void write_linkedlist_table(struct node* root) {
+    printf("%-15s %-10s %-15s\n", "Atom Number", "Symbol", "Atomic Weight");
+    printf("-------------------------------------------\n");
+
+    node* iter = root;
+    while (iter != NULL) {
+        printf("%-15d %-10s %-15.3f\n", iter->no, iter->symbol, iter->atomic_weight);
+        iter = iter->next;
+    }
+}
+
+struct node* create_linkedlist(int data, const char* symbol, double atomic_weight) {
+    node* root = (node*)malloc(sizeof(node));
+    root->no = data;
+    strncpy(root->symbol, symbol, sizeof(root->symbol));
+    root->atomic_weight = atomic_weight;
+    root->next = NULL;
+    return root;
+}
+
+void add_node_end_of_linkedlist(struct node** linkedlist, int data, const char* symbol, double atomic_weight) {
+    node* iter = *linkedlist;
+    if (*linkedlist == NULL) {
+        *linkedlist = create_linkedlist(data, symbol, atomic_weight);
+    } else {
+        while (iter->next != NULL) {
+            iter = iter->next;
+        }
+        iter->next = create_linkedlist(data, symbol, atomic_weight);
+    }
+}
+
+void free_linkedlist(struct node* head) {
+    struct node* current = head;
+    while (current != NULL) {
+        struct node* nextNode = current->next;
+        free(current);
+        current = nextNode;
+    }
+}
+
+int main() {
+    node* elements = NULL;
+
+    //Let's add the first 10 elements
+    add_node_end_of_linkedlist(&elements, 1, "H", 1.008);
+    add_node_end_of_linkedlist(&elements, 2, "He", 4.0026);
+    add_node_end_of_linkedlist(&elements, 3, "Li", 6.94);
+    add_node_end_of_linkedlist(&elements, 4, "Be", 9.0122);
+    add_node_end_of_linkedlist(&elements, 5, "B", 10.81);
+    add_node_end_of_linkedlist(&elements, 6, "C", 12.011);
+    add_node_end_of_linkedlist(&elements, 7, "N", 14.007);
+    add_node_end_of_linkedlist(&elements, 8, "O", 15.999);
+    add_node_end_of_linkedlist(&elements, 9, "F", 18.998);
+    add_node_end_of_linkedlist(&elements, 10, "Ne", 20.180);
+
+    //Print in tabular form
+    write_linkedlist_table(elements);
+
+    //Clear Memory
+    free_linkedlist(elements);
+
+    return 0;
+}
